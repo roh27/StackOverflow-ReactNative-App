@@ -78,7 +78,8 @@ export default class App extends Component {
                   onPress={() => {
                     this.setState({
                       searchTitle: null,
-                      modalVisible: false});
+                      modalVisible: false,
+                    });
                   }}
                 />
               </View>
@@ -93,9 +94,9 @@ export default class App extends Component {
                 <List style={styles.ansContainer}>
                   <Text style={styles.heading}>Answer {key + 1}</Text>
                   <Text style={styles.answer}>{item.body}</Text>
-                  <View style={styles.codeBg}>
+                  <ScrollView style={styles.codeBg}>
                     <Text style={styles.code}>{item.excerpt}</Text>
-                  </View>
+                  </ScrollView>
                 </List>
               ))}
             </ScrollView>
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
   buttonView: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingRight: 350,
+    paddingRight: 300,
   },
   question1: {
     justifyContent: 'center',
@@ -218,6 +219,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   codeBg: {
-    backgroundColor: '#d8d8d8d8'
+    backgroundColor: '#d8d8d8d8',
   },
 });
